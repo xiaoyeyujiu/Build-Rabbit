@@ -1,3 +1,3 @@
-当前正在做什么：继续修正 GitHub Actions 的 macOS 打包配置，避免 runner 标签和架构漂移。
-上次停在哪个位置：macOS job 已改到 `macos-latest`，但标签不够稳定，用户反馈配置仍有问题。
-近期关键决定及原因：改为显式 `macos-15` runner，并在构建命令中指定 `--arm64`，减少 `latest` 漂移和架构不确定性。
+当前正在做什么：将 Win 和 macOS 打包流程拆分为两个独立 GitHub Actions workflow，并升级核心 action 版本。
+上次停在哪个位置：单一 workflow 已能分别打包 Win/Mac，但用户要求彻底拆成两个 yml，且消除 Node 20 action 弃用警告。
+近期关键决定及原因：拆为 `build-windows.yml` 和 `build-macos.yml`，并升级到 `actions/checkout@v5`、`actions/setup-node@v6`、`actions/upload-artifact@v6`，避免继续依赖 Node 20 运行时。

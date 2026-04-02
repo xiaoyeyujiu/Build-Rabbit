@@ -63,11 +63,12 @@ pnpm build
 
 ### GitHub Actions 自动打包 Win 和 Mac 安装包
 
-- 工作流文件：`.github/workflows/build-desktop.yml`
+- Windows 工作流：`.github/workflows/build-windows.yml`
+- macOS 工作流：`.github/workflows/build-macos.yml`
 - 触发方式：手动触发 `workflow_dispatch`，或推送形如 `v0.1.0` 的 tag
 - `build-windows`：生成 `NSIS 安装包 + portable exe`
 - `build-macos`：生成 `dmg + zip`
-- 工作流会同时上传到 GitHub Actions artifacts；如果是 tag 触发，还会自动附加到 GitHub Release
+- 两个工作流分别独立运行，各自上传到 GitHub Actions artifacts；如果是 tag 触发，还会自动附加到 GitHub Release
 
 ```bash
 git tag v0.1.0
