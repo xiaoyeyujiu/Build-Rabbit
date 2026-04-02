@@ -1,0 +1,38 @@
+/**
+ * @description 全局样式、桌面挂件视觉变量和 Electron 窗口拖拽区域设置。
+ */
+
+@import "tailwindcss";
+
+:root {
+  color: #0f172a;
+  background: transparent;
+  font-family: "Microsoft YaHei UI", "PingFang SC", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+button {
+  font: inherit;
+}
+
+.app-drag {
+  -webkit-app-region: drag;
+}
+
+.app-no-drag {
+  -webkit-app-region: no-drag;
+}

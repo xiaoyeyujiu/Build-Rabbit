@@ -1,0 +1,5 @@
+{
+  "name": "Mood Buddy",
+  "description": "A desktop companion that changes mood by time of day and runs as an Electron widget.",
+  "requestFramePermissions": []
+}
