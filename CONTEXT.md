@@ -1,3 +1,3 @@
-当前正在做什么：修复 GitHub Actions 中 macOS runner 配置不受支持的问题。
-上次停在哪个位置：Win/Mac 打包工作流已拆分，但 macOS job 在 runner 选择阶段直接失败。
-近期关键决定及原因：将 `build-macos` 的 `runs-on` 从固定 `macos-13` 改为 `macos-latest`，提高在当前仓库环境中的兼容性。
+当前正在做什么：继续修正 GitHub Actions 的 macOS 打包配置，避免 runner 标签和架构漂移。
+上次停在哪个位置：macOS job 已改到 `macos-latest`，但标签不够稳定，用户反馈配置仍有问题。
+近期关键决定及原因：改为显式 `macos-15` runner，并在构建命令中指定 `--arm64`，减少 `latest` 漂移和架构不确定性。
