@@ -1,3 +1,3 @@
-当前正在做什么：完成 GitHub SSH 推送并修复远程拒绝大文件的问题。
-上次停在哪个位置：SSH 443 通道已打通，但推送被远程 main 历史和超大打包文件拦截。
-近期关键决定及原因：改用 GitHub SSH 443 端口，重建一条不含 `release/` 大文件历史的干净 `main`，并将远程 main 合并后成功推送。
+当前正在做什么：修复 GitHub Actions 中 macOS runner 配置不受支持的问题。
+上次停在哪个位置：Win/Mac 打包工作流已拆分，但 macOS job 在 runner 选择阶段直接失败。
+近期关键决定及原因：将 `build-macos` 的 `runs-on` 从固定 `macos-13` 改为 `macos-latest`，提高在当前仓库环境中的兼容性。
